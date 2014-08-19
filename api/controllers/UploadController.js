@@ -7,7 +7,6 @@
 
 var fs = require('fs');
 var UPLOAD_PATH = 'assets/images/';
-var mkdirp = require('mkdirp');
 module.exports = {
   
   
