@@ -32,13 +32,14 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  },
-
+  'get /': 'HomeController.index',
+  'get /clear': 'HomeController.clear',
 
   'get /upload': 'UploadController.index',
   'post /processUpload': 'UploadController.processUpload',
+
+  // test
+  'post /processUpload2': 'UploadController.processUpload2',
 
   /***************************************************************************
   *                                                                          *

@@ -11,7 +11,8 @@
 (function (io) {
 
   // as soon as this file is loaded, connect automatically, 
-  var socket = io.connect('http://localhost:1337');
+  // var socket = io.connect('http://localhost:1337');
+  var socket = io.connect('http://192.168.1.110:1337');
   if (typeof console !== 'undefined') {
     log('Connecting to Sails.js...');
   }
@@ -34,25 +35,22 @@
 
 
     socket.on('uploaded', function messageReceived(data) {
-      log('New comet message received :: ', data);
+      // log('New comet message received :: ', data);
       data_class = "."+data.class;
       setTimeout(function(){
         $.ajax({
             url: data.path,
             type:'HEAD',
             error: function()
-            {
-                //file not exists
+            { 
             },
             success: function()
             {
-                $(data_class).html($('<img src="'+data.path+'"/>')); 
+              $(data_class).html($('<img style="width:100%; height:100%;" src="'+data.path+'"/>')); 
             }
         });
-     
-        
-      //   $(data_class).html($('<img src="'+data.path+'"/>'));  
-      }, 3000);
+      
+      }, 1500);
       
 
     });

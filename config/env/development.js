@@ -20,5 +20,7 @@ module.exports = {
   // models: {
   //   connection: 'someMongodbServer'
   // }
-
+  native_mongodb  : {
+    url: "mongodb://127.0.0.1:27017/mou" 
+  }
 };

@@ -17,10 +17,20 @@ module.exports = {
       }else{
         data = findUpload;
       }
-      console.log()
-      return res.view("home", data);  
+      // console.log(data) 
+      // return res.view("home", data);  
+      return res.view("sipa-psu", data);  
     })
     
+  },
+
+  clear: function(req, res){
+    Upload.destroy(function(err, deleteResult){
+      if(err) return err;
+      return res.json({
+        data: "clear"
+      });  
+    })
   }
 
 };

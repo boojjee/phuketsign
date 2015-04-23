@@ -2,7 +2,7 @@ body{
   padding: 0;
   margin: 0;
   
-  background: #222222;
+  background: #fff;
 }
 p{
   margin: 0;
@@ -93,3 +93,85 @@ footer{
   width: 180px;
   height: 180px;
 }
+
+.container-main{
+  width:1024px;
+  height: 768px; 
+  margin:0 auto;
+  background: url('/images/sipapsu/full-bg.png');
+}
+
+.header-sign{ 
+  height: 160px;  
+  /*background: url('/images/sipapsu/full-bg.png');*/
+}
+.body-sign1{
+  clear:both;
+  overflow: hidden;
+  width: 870px;
+  margin: 0 auto;
+  top: 6px;
+  position: relative;
+}
+.box-name{
+  height: 215px;  
+  width: 250px;
+  float: left;
+  margin: 0px 20px;
+}
+.texthead-sing{
+  height: 70px;  
+  width: 482px;
+  margin:18px auto; 
+  background: url('/images/sipapsu/พิธีลงนามบันทึกข้อตก.png') 0 0 no-repeat;
+} 
+.sign-border{
+  width: 241px;
+  height: 145px;
+  position: relative;
+  background: url('/images/sipapsu/sign-bg.png') 0 0 no-repeat;
+
+}
+.sign{
+  width: 234px;
+  height: 138px; 
+  background: url('/images/sipapsu/sign-area.png') 0 0 no-repeat;  
+  position: absolute;
+  top: 4px;
+  left: 3px;
+}
+
+.body-sign2{
+  width: 290px;
+  margin: 0 auto;
+  clear: both;
+  overflow: hidden;
+  position: relative;
+  top: 12px;
+}
+
+
+.naming-sign1{
+  margin: 10px auto;
+  width: 238px;
+}
+.naming-sign2{
+  margin: 10px auto;
+  width: 244px;
+}
+.naming-sign3{
+  margin: 10px auto;
+  width: 214px;
+}
+.naming-sign4{
+  margin: 10px auto;
+  width: 168px;
+}
+
+.footer-sign{
+  width:411px;
+  margin:0 auto;
+  position: relative;
+  top: 24px;
+}
+

@@ -13,16 +13,23 @@ module.exports = {
   index: function (req, res){
    res.view("upload")
   },
+  
+  processUpload2: function(req, res){
+    return res.json(req.body)
+  },
 
   processUpload: function(req, res){
+    // console.log(req.body)
     // var file = req.files.userPhoto,
     var socket = req.socket;
     var io = sails.io;
     dirPath = UPLOAD_PATH;
     id = req.body.id;
+    
     req.file('img').upload(function (err, files) {
       if (err) return res.serverError(err);
-
+      // console.log(req.body)
+      // console.log(req.params.all())
       fs.readFile(files[0].fd, function (err, data) {
         if (err) {
           
@@ -50,12 +57,9 @@ module.exports = {
               id: id,
               name: files[0].filename,
             }
+            console.log(id)
+            io.sockets.emit('uploaded', image_sign); 
 
-            io.sockets.emit('uploaded', image_sign);
-              // message: files.length + ' file(s) uploaded successfully!',
-              // path: "files.fd",
-              // path2: files[0].fd,
-              // files: files
             Upload.find({ id: id},function(err, findUpload){
               if(err) return err;
               
@@ -63,7 +67,8 @@ module.exports = {
                 Upload.create(image_sign, function(err, uploadCreated){
                   if(err) return err;
                   return res.json({
-                    uploaded: true
+                    uploaded: true,
+                    data: image_sign
                   });
                 })
               }else{
@@ -71,7 +76,8 @@ module.exports = {
                   if(err) return err;
 
                   return res.json({
-                    uploaded: true
+                    uploaded: true,
+                    data: image_sign
                   });
 
 
