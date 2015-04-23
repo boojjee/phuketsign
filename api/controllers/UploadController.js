@@ -24,9 +24,10 @@ module.exports = {
     var socket = req.socket;
     var io = sails.io;
     dirPath = UPLOAD_PATH;
-    id = req.body.id;
+    // id = req.body.id;
     
     req.file('img').upload(function (err, files) {
+      // console.log(files)
       if (err) return res.serverError(err);
       // console.log(req.body)
       // console.log(req.params.all())
@@ -50,7 +51,10 @@ module.exports = {
             }
             fname = files[0].filename;
             split_name = fname.split(".");
-
+            console.log(fname)
+            id_arr = fname.split("-");
+            id = id_arr[0]
+            
             image_sign = {
               path: 'images/'+files[0].filename,
               class: id ,
